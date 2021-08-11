@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2 {
+  border-bottom: 1px solid gray;
+}
+
+a {
+  color: #398BEB;
+  font-weight: bold;
+}
+
+#ciphertext-freq {
+  text-transform: uppercase;
+}
+
+#keyword, #keyword-for-decrypt {
+  text-transform: uppercase;
+}
+
+.shift-table {
+  margin-top: 1em;
+}
+
+.alphabet input {
+  text-align: center;
+  width: 40px;
+  margin: .25%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  padding: 0;
+  margin: 0;
+}
+
+#decoding {
+  display: none;
+}
+
+.bold {
+  font-size: 2em;
+}
+
+.frequency-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.frequency-box .box {
+  width: 60px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.frequency-box .box__cipher {
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+
+.frequency-box .box__bar {
+  width: 90%;
+  height: 0%;
+  background-color: blue;
+  margin: 0px auto;
+}
+
+.frequency-box .box__letter {
+  border-top: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

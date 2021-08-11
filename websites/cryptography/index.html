@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Home - Cracking the Code</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- CSS only -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand -->
+          <a class="navbar-brand" href="#">Cracking the Code</a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+               <ul class="navbar-nav">
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              Substitution Ciphers
+                         </a>
+                         <div class="dropdown-menu">
+                              <a class="dropdown-item" href="random.html">Random</a>
+                              <a class="dropdown-item" href="shift.html">Shift</a>
+                              <a class="dropdown-item" href="keyword.html">Keyword</a>
+                              <a class="dropdown-item" href="vigenere.html">Vigenere</a>
+                         </div>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="frequency-analysis.html">Frequency Analysis</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                         <a class="nav-link" href="#">Link</a>
+                    </li> -->
+               </ul>
+          </div>
+     </nav>
+
+
+     <div class="container">
+
+          <div class="row mt-5 mb-3">
+               <div class="col">
+                    <h1>Welcome to Cracking the Code</h1>
+               </div>
+          </div>
+
+          <p>You don’t have to be an expert in cryptography to appreciate the field.
+               Cryptography is all around us. We use it to store sensitive data, send secret
+               messages, send financial information over the internet, hide messages from
+               parents, etc. The methods we will cover in this website can be easily picked up
+               with some knowledge of basic arithmetic and some modular algebra (not as scary as you think).</p>
+
+          <p>This is an educational website dedicated to teaching you how to use various encryption techniques to code
+               and decode messages. The goal is to show you some of the most famous encryption techniques for the
+               last 2000 years and how they're used. Each page has an cipher introduction, how it works, example, and
+               the cipher tool. The cipher tool will let you code and decode messages.
+          </p>
+
+          <p>The standard substitution ciphers use <b>private keys.</b> This means the person sending and receiving the
+               message have knowledge of the encryption technique and key. If someone intercepted the message, they
+               would not be able to quickly decode the message. </p>
+          <p>Decoding messages without knowing the key can be very fun. We've developed many techniques for various
+               systems. For the
+               monoalphabetic ciphers (<a href="shift.html">Shift</a>, <a href="random.html">Random</a>, <a
+                    href="keyword.html">Keyword</a>), we can use a technique called <a href="frequency-analysis.html">Frequency analysis</a>. Use it to find
+               the answer to the riddles.</p>
+
+          <div class="alert alert-info">
+               <p>I've encrypted the following text with the same one as the answers to the riddles below. Use frequency analysis to decode the following paragraph. Then use it to answer the riddles below.
+
+               </p>
+               <p><b>HY JPHI DQ FVLSBI.
+ 
+                    D BPVI QSLGIJ MODJTIQQIQ APTF COLH QGIIMDJK APOOLW FDJKQ. D AUOJIR RLWJ SBI SLWJ LC SOIALJ. D BPVI QMIJS SBI JDKBS WDSB CIGUODPJ PJR GICS WDSB ALSB HY QPJDSY PJR HY GDCI. D WPQ IXMIGGIR COLH SBI UJDVIOQDSY PS P YLUJKIO PKI SBPJ HLQS MILMGI POI PGGLWIR DJ. D SOIPR MPSBQ AY HLLJGDKBS SBPS LSBIOQ CIPO SL QMIPF LC RUODJK RPY. D BPVI SPGFIR SL KLRQ, GLVIR WLHIJ, PJR WODSSIJ QLJKQ SBPS HPFI SBI HDJQSOIGQ WIIM.
+                     
+                    YLU HPY BPVI BIPOR LC HI.
+                     
+                    QL AIKDJQ P SPGI UJINUPGIR DJ CPJSPQY GDSIOPSUOI—SBI QSLOY LC P BIOL SLGR DJ BDQ LWJ VLDTI. DS DQ P SPGI LC QLOOLW, P SPGI LC QUOVDVPG, P SPGI LC LJI HPJ’Q QIPOTB CLO HIPJDJK DJ BDQ UJDVIOQI, PJR BLW SBPS QIPOTB, PJR SBI DJRLHDSPAGI WDGG SBPS ROLVI DS, KPVI ADOSB SL P GIKIJR. </b>  </p>
+          </div>
+
+          <ol class="list-group">
+               <li class="list-group-item">
+                    <p>What did the one eye say to the other? </p>
+                    <p class="mx-auto">AISWIIJ YLU PJR HI QLHISBDJK QHIGGQ!</p></li>
+               <li class="list-group-item">
+                    <p>Why can't you tell an egg a joke?</p>
+                    <p class="mx-auto">DS HDKBS TOPTF UM.</p>
+               </li>
+               <li class="list-group-item">
+                    <p>Did you hear the joke about about the roof?</p>
+                    <p>JIVIOHDJR, DS'Q LVIO YLUO BIPR.</p>
+               </li>
+               <li class="list-group-item">
+                    <p>How can a pants pocket be empty and still have something in it?</p>
+                    <p>DS TPJ BPVI P BLGI DJ DS.</p>
+               </li>
+          </ol>
+
+     </div>
+
+
+
+     <div class="container-fluid footer bg-dark text-light p-3">
+          <p>&copy; Brian Veitch</p>
+     </div>
+
+</body>
+
+</html>

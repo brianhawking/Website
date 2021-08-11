@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Frequency Analysis - Cracking the Code</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- CSS only -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+
+
+
+</head>
+
+<body>
+
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand -->
+          <a class="navbar-brand" href="index.html">Cracking the Code</a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+               <ul class="navbar-nav">
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              Substitution Ciphers
+                         </a>
+                         <div class="dropdown-menu">
+                              <a class="dropdown-item" href="random.html">Random</a>
+                              <a class="dropdown-item" href="shift.html">Shift</a>
+                              <a class="dropdown-item" href="keyword.html">Keyword</a>
+                              <a class="dropdown-item" href="vigenere.html">Vigenere</a>
+                         </div>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#">Frequency Analysis</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                         <a class="nav-link" href="#">Link</a>
+                    </li> -->
+               </ul>
+          </div>
+     </nav>
+
+
+     <div class="container">
+
+          <div class="row mt-5 mb-3">
+               <div class="col">
+                    <h1>Frequency Analysis</h1>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="col">
+                    <p>Frequency analysis is an amazing tool that we can use to decode monoalphabetic ciphers. In each
+                         language, letters of your alphabet are likely to show up a certain amount of times. For
+                         example, the letter "E" in the English language is the letter that shows up most often. In a
+                         large enough sample, "E" shows up about 12.4% of the time. So if I kept a running tally of all
+                         the letters of the ciphertext and found "g" shows up most often (or around 12.4%), I'd guess
+                         that "g" decodes to "E". </p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="col">
+                    <h2>How does it work?</h2>
+                    <p>After calculating the frequency you will see a distribution of the letters of the ciphertext.
+                         Compare these percentages with the expected distribution of the English language letters. You
+                         will see a dropdown under that particular ciphertext letter. Choose a letter and the page will
+                         replace the ciphertext letter with your choice. Continue doing this until you assigned all the
+                         letters. </p>
+                    <div class="alert alert-warning">
+                         <p>NOTE: If your ciphertext sample is not that large, frequency analysis will not do a great
+                              job. That's because the distribution of the ciphertext letters won't necessarily match the
+                              expected distribution. There will be a lot more guessing on your part. </p>
+                         </p>
+                    </div>
+               </div>
+
+          </div>
+
+
+          <div class="row">
+               <div class="col">
+                    <form>
+                         <div class="form-group">
+                              <label for="ciphertext">
+                                   <h3>Ciphertext</h3>
+                              </label>
+                              <textarea class="form-control" id="ciphertext-freq" rows="6"
+                                   placeholder="Enter ciphertext here..."></textarea>
+                         </div>
+
+
+
+
+                    </form>
+               </div>
+
+          </div>
+
+          <button type="button" class="btn btn-primary m-1" onclick="calculate();">Calculate
+               Frequency!</button>
+          <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#myModal">
+               English Language Letter Distribution
+          </button>
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+               <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+
+                         <!-- Modal Header -->
+                         <!-- <div class="modal-header">
+                <h1 class="modal-title">English Language Letter Distribution</h1>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+              </div> -->
+
+                         <!-- Modal body -->
+                         <div class="modal-body">
+                              <h3>English Language Letter Distribution</h3>
+
+                              <table class="table table-striped" style="text-align: center;">
+                                   <thead>
+                                        <tr>
+                                             <td>Letter</td>
+                                             <td>Frequency</td>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr>
+                                             <td>E</td>
+                                             <td>12.60%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>T</td>
+                                             <td>9.37%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>A</td>
+                                             <td>8.34%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>O</td>
+                                             <td>7.70%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>N</td>
+                                             <td>6.80%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>I</td>
+                                             <td>6.71%</td>
+                                        </tr>
+
+                                        <tr>
+                                             <td>S</td>
+                                             <td>6.11%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>H</td>
+                                             <td>6.11%</td>
+                                        </tr>
+
+                                        <tr>
+                                             <td>R</td>
+                                             <td>5.68%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>D</td>
+                                             <td>4.14%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>L</td>
+                                             <td>4.24%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>U</td>
+                                             <td>2.85%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>C</td>
+                                             <td>2.73%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>M</td>
+                                             <td>2.53%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>W</td>
+                                             <td>2.34%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>Y</td>
+                                             <td>2.04%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>F</td>
+                                             <td>2.03%</td>
+                                        </tr>
+
+                                        <tr>
+                                             <td>G</td>
+                                             <td>1.92%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>P</td>
+                                             <td>1.66%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>B</td>
+                                             <td>1.54%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>V</td>
+                                             <td>1.06%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>K</td>
+                                             <td>0.87%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>J</td>
+                                             <td>0.23%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>X</td>
+                                             <td>0.20%</td>
+                                        </tr>
+
+                                        <tr>
+                                             <td>Q</td>
+                                             <td>0.09%</td>
+                                        </tr>
+                                        <tr>
+                                             <td>Z</td>
+                                             <td>0.06%</td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+
+                         <!-- Modal footer -->
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                         </div>
+
+                    </div>
+               </div>
+          </div>
+
+          <div class="decoding" id="decoding">
+
+               <div class="frequency-box mb-3">
+
+                    <div id="box_0" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_1" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_2" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_3" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_4" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_5" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_6" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_7" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_8" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_9" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_10" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_11" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_12" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_13" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_14" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_15" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_16" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+                    <div id="box_17" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_18" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_19" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_20" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_21" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_22" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_23" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_24" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+                    <div id="box_25" class="box">
+                         <div class="box__number"></div>
+                         <div class="box__bar"></div>
+                         <div class="box__percentage"></div>
+                         <div class="box__letter"></div>
+                    </div>
+
+               </div>
+
+
+               <h2>Decrypt the message</h2>
+               <p>Decrypt the message by making substitutions by mapping a letter of the ciphertext to a letter from the
+                    plaintext.</p>
+
+               <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#myModal">
+                    English Language Letter Distribution
+               </button>
+
+               <!-- The Modal -->
+               <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                         <div class="modal-content">
+
+                              <!-- Modal Header -->
+                              <!-- <div class="modal-header">
+                     <h1 class="modal-title">English Language Letter Distribution</h1>
+                     <button type="button" class="close" data-dismiss="modal">×</button>
+                   </div> -->
+
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                   <h3>English Language Letter Distribution</h3>
+
+                                   <table class="table table-striped" style="text-align: center;">
+                                        <thead>
+                                             <tr>
+                                                  <td>Letter</td>
+                                                  <td>Frequency</td>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr>
+                                                  <td>E</td>
+                                                  <td>12.36%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>T</td>
+                                                  <td>8.95%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>A</td>
+                                                  <td>8.05%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>O</td>
+                                                  <td>7.72%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>N</td>
+                                                  <td>6.96%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>I</td>
+                                                  <td>6.87%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>H</td>
+                                                  <td>6.50%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>S</td>
+                                                  <td>6.29%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>R</td>
+                                                  <td>5.75%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>D</td>
+                                                  <td>4.54%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>L</td>
+                                                  <td>4.03%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>U</td>
+                                                  <td>2.81%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>M</td>
+                                                  <td>2.59%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>C</td>
+                                                  <td>2.38%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>C</td>
+                                                  <td>2.38%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>W</td>
+                                                  <td>2.35%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>F</td>
+                                                  <td>2.18%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>Y</td>
+                                                  <td>2.12%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>G</td>
+                                                  <td>2.04%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>P</td>
+                                                  <td>1.68%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>B</td>
+                                                  <td>1.49%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>V</td>
+                                                  <td>1.03%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>K</td>
+                                                  <td>0.85%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>X</td>
+                                                  <td>0.15%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>J</td>
+                                                  <td>0.13%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>Q</td>
+                                                  <td>0.10%</td>
+                                             </tr>
+                                             <tr>
+                                                  <td>Z</td>
+                                                  <td>0.09%</td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+
+               <div class="progress mb-4" style="height:20px">
+                    <div class="progress-bar bg-success" id="progress-bar" style="width:0%">0% Complete</div>
+                  </div>
+               <div class="jumbotron">
+                    <p id="plaintext"></p>
+               </div>
+
+          </div>
+
+          
+          <div class="row mt-4">
+               <div class="col">
+                 
+                    <h2>Encryption Tables</h2>
+                  
+                    <p>After you completely decode your message, check to see if you see a pattern in the ciphertext
+                         table.</p>
+
+               </div>
+          </div>
+
+          <div class="card bg-light m-2">
+               <div class="card-body">
+                    <h3>Original Alphabet (Plaintext)</h3>
+                    <form class='alphabet' align='center'>
+                         <div class="form-group">
+                              <input type='text' value='a'>
+                              <input type='text' value='b'>
+                              <input type='text' value='c'>
+                              <input type='text' value='d'>
+                              <input type='text' value='e'>
+                              <input type='text' value='f'>
+                              <input type='text' value='g'>
+                              <input type='text' value='h'>
+                              <input type='text' value='i'>
+                              <input type='text' value='j'>
+                              <input type='text' value='k'>
+                              <input type='text' value='l'>
+                              <input type='text' value='m'>
+                              <input type='text' value='n'>
+                              <input type='text' value='o'>
+                              <input type='text' value='p'>
+                              <input type='text' value='q'>
+                              <input type='text' value='r'>
+                              <input type='text' value='s'>
+                              <input type='text' value='t'>
+                              <input type='text' value='u'>
+                              <input type='text' value='v'>
+                              <input type='text' value='w'>
+                              <input type='text' value='x'>
+                              <input type='text' value='y'>
+                              <input type='text' value='z'>
+                         </div>
+                    </form>
+
+
+                    <h3>Substitution (Ciphertext)</h3>
+
+
+                    <form class="alphabet" align='center'>
+                         <div class="form-group">
+                              <input type='text' value='' id='_A'>
+                              <input type='text' value='' id='_B'>
+                              <input type='text' value='' id='_C'>
+                              <input type='text' value='' id='_D'>
+                              <input type='text' value='' id='_E'>
+                              <input type='text' value='' id='_F'>
+                              <input type='text' value='' id='_G'>
+                              <input type='text' value='' id='_H'>
+                              <input type='text' value='' id='_I'>
+                              <input type='text' value='' id='_J'>
+                              <input type='text' value='' id='_K'>
+                              <input type='text' value='' id='_L'>
+                              <input type='text' value='' id='_M'>
+                              <input type='text' value='' id='_N'>
+                              <input type='text' value='' id='_O'>
+                              <input type='text' value='' id='_P'>
+                              <input type='text' value='' id='_Q'>
+                              <input type='text' value='' id='_R'>
+                              <input type='text' value='' id='_S'>
+                              <input type='text' value='' id='_T'>
+                              <input type='text' value='' id='_U'>
+                              <input type='text' value='' id='_V'>
+                              <input type='text' value='' id='_W'>
+                              <input type='text' value='' id='_X'>
+                              <input type='text' value='' id='_Y'>
+                              <input type='text' value='' id='_Z'>
+
+                         </div>
+
+                    </form>
+               </div>
+          </div>
+
+     </div> <!-- end container -->
+
+
+
+     <div class="container-fluid footer bg-dark text-light p-3">
+          <p>&copy; Brian Veitch</p>
+     </div>
+
+     <!-- Custom JS -->
+     <script src="js/scripts.js"></script>
+     <script src="js/frequency-analysis-2.js"></script>
+
+</body>
+
+</html>

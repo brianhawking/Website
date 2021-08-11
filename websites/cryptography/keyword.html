@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>The Keyword Cipher</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- CSS only -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+
+
+
+</head>
+
+<body>
+
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand -->
+          <a class="navbar-brand" href="index.html">Cracking the Code</a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+               <ul class="navbar-nav">
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              Substitution Ciphers
+                         </a>
+                         <div class="dropdown-menu">
+                              <a class="dropdown-item" href="random.html">Random</a>
+                              <a class="dropdown-item" href="shift.html">Shift</a>
+                              <a class="dropdown-item" href="keyword.html">Keyword</a>
+                              <a class="dropdown-item" href="vigenere.html">Vigenere</a>
+                         </div>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="frequency-analysis.html">Frequency Analysis</a>
+                    <!-- </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#">Link</a>
+                    </li> -->
+               </ul>
+          </div>
+     </nav>
+
+
+     <div class="container">
+
+          <div class="row mt-5 mb-3">
+               <div class="col">
+                    <h1>The Keyword Cipher</h1>
+                    <p><a href="#keyword-cipher-tool">Go straight to the Keyword Cipher tool</a></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="col-lg-1"></div>
+               <div class="col-lg-11">
+
+                    <h2>Introduction</h2>
+                    <p>The Keyword cipher is a type of substitution cipher, specifically a monoalphabetic substitution
+                         cipher. This means that you replace a letter in the plaintext with the same letter every time.
+                         For example, if you
+                         replace the letter "A" with "H", you must do that for every "A" in the entire plaintext.</p>
+
+
+                    <p>Consider the following random substitution table. There's no pattern to how the plaintext maps to
+                         the ciphertext. This is the setup to a <a href="random.html">Random substitution.</a> I explain
+                         more how substitution works here.</p>
+
+                    <div class="card bg-light m-4">
+                         <div class="card-body">
+                              <h3>Original Alphabet (Plaintext)</h3>
+                              <form class='alphabet' align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='A'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='Z'>
+                                   </div>
+                              </form>
+
+
+                              <h3>Substitution (Ciphertext)</h3>
+
+                              <form class="alphabet" align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='S'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Z'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='A'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='N'>
+
+                                   </div>
+
+                              </form>
+
+                         </div>
+                    </div>
+
+                    <p>The keyword cipher requires a "keyword." It's preferable the keyword has no repeated letters. For
+                         example, WIZARD is a good keyword. However, the word BASEBALL is bad. The letters "B", "A", and
+                         "L" are repeated. I'll discuss after the example what to do when the keyword has repeated
+                         letters.
+                    </p>
+
+                    <p>Next step is remove all the letters from the ciphertext table. We're going to start with a clean slate.
+                         It should look like this.</p>
+
+                    <div class="card bg-light m-4">
+                         <div class="card-body">
+                              <h3>Original Alphabet (Plaintext)</h3>
+                              <form class='alphabet' align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='A'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='Z'>
+                                   </div>
+                              </form>
+
+
+                              <h3>Substitution (Ciphertext)</h3>
+
+                              <form class="alphabet" align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+
+                                   </div>
+
+                              </form>
+
+                         </div>
+                    </div>
+
+                    <p>Now we place our keyword in the first empty slots in the ciphertext table. Suppose our keyword is
+                        <b>WIZARD</b>. It should look like this.
+                    </p>
+
+                    <div class="card bg-light m-4">
+                         <div class="card-body">
+                              <h3>Original Alphabet (Plaintext)</h3>
+                              <form class='alphabet' align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='A'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='Z'>
+                                   </div>
+                              </form>
+
+
+                              <h3>Substitution (Ciphertext)</h3>
+
+                              <form class="alphabet" align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='W'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='Z'>
+                                        <input type='text' value='A'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+                                        <input type='text' value=''>
+
+                                   </div>
+
+                              </form>
+
+                         </div>
+                    </div>
+
+                    <p>The last step to creating our keyword encryption is to place all the remaining letters of the
+                         alphabet in the rest of the boxes. If a letter was used in the keyword then you skip over it.
+                    </p>
+
+                    <div class="card bg-light m-4">
+                         <div class="card-body">
+                              <h3>Original Alphabet (Plaintext)</h3>
+                              <form class='alphabet' align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='A'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='Z'>
+                                   </div>
+                              </form>
+
+
+                              <h3>Substitution (Ciphertext)</h3>
+
+                              <form class="alphabet" align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='W'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='Z'>
+                                        <input type='text' value='A'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+
+                                   </div>
+
+                              </form>
+
+                         </div>
+                    </div>
+
+                    <To>Congrats! You created your first keyword encryption system using the keyword WIZARD. 
+                         
+                    <h2 class="m-2">How does it work?</h2>
+                         <p>To encrypt, replace all the letters of your plaintext with the corresponding letter in the ciphertext
+                              table. To decrypt, replace all the letters in your ciphertext with the corresponding letter in
+                              the plaintext table.</p>
+
+
+                    <div class="alert alert-warning">
+                         <p>NOTE: If you want to use a keyword with repeated letters, then you have to remove those
+                              letters before placing it in the ciphertext boxes. For example, if you want to use
+                              BASEBALL, then you need to remove a "B", "A", and "L". So BASEBALL is now BASEL. See? Not
+                              that cool of a password now. </p>
+                         </p>
+                    </div>
+
+                    <h2>Example</h2>
+
+                    <p>Using the keyword <b>WIZARD</b> we get the following encryption for the message <b>ATTACK AT DAWN</b></p>
+
+                    <table class="table table-striped">
+                         <tr>
+                              <td>Plaintext:</td>
+                              <td>A T T A C K &nbsp; A T &nbsp; D A W N</td>
+                         </tr>
+
+                         <tr>
+                              <td>Ciphertext:</td>
+                              <td>W Q Q W Z G &nbsp; W Q &nbsp; A W U K</td>
+                         </tr>
+                    </table>
+
+
+
+                    <!-- Beginning of keyword encryption tool-->
+                    <hr>
+
+                    <div class="row m-3"></div>
+
+                    <h2 id="keyword-cipher-tool">The Keyword Cipher Tool</h2>
+                    <p>Enter your keyword below and click Generate. The ciphertext boxes will populate with the keyword
+                         cipher.</p>
+                    <div class="card bg-light m-2 mt-4">
+                         <div class="card-body">
+                              <h3>Original Alphabet (Plaintext)</h3>
+                              <form class='alphabet' align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='A'>
+                                        <input type='text' value='B'>
+                                        <input type='text' value='C'>
+                                        <input type='text' value='D'>
+                                        <input type='text' value='E'>
+                                        <input type='text' value='F'>
+                                        <input type='text' value='G'>
+                                        <input type='text' value='H'>
+                                        <input type='text' value='I'>
+                                        <input type='text' value='J'>
+                                        <input type='text' value='K'>
+                                        <input type='text' value='L'>
+                                        <input type='text' value='M'>
+                                        <input type='text' value='N'>
+                                        <input type='text' value='O'>
+                                        <input type='text' value='P'>
+                                        <input type='text' value='Q'>
+                                        <input type='text' value='R'>
+                                        <input type='text' value='S'>
+                                        <input type='text' value='T'>
+                                        <input type='text' value='U'>
+                                        <input type='text' value='V'>
+                                        <input type='text' value='W'>
+                                        <input type='text' value='X'>
+                                        <input type='text' value='Y'>
+                                        <input type='text' value='Z'>
+                                   </div>
+                              </form>
+
+
+                              <h3>Substitution (Ciphertext)</h3>
+
+                              <form class="alphabet" align='center'>
+                                   <div class="form-group">
+                                        <input type='text' value='' id='_A'>
+                                        <input type='text' value='' id='_B'>
+                                        <input type='text' value='' id='_C'>
+                                        <input type='text' value='' id='_D'>
+                                        <input type='text' value='' id='_E'>
+                                        <input type='text' value='' id='_F'>
+                                        <input type='text' value='' id='_G'>
+                                        <input type='text' value='' id='_H'>
+                                        <input type='text' value='' id='_I'>
+                                        <input type='text' value='' id='_J'>
+                                        <input type='text' value='' id='_K'>
+                                        <input type='text' value='' id='_L'>
+                                        <input type='text' value='' id='_M'>
+                                        <input type='text' value='' id='_N'>
+                                        <input type='text' value='' id='_O'>
+                                        <input type='text' value='' id='_P'>
+                                        <input type='text' value='' id='_Q'>
+                                        <input type='text' value='' id='_R'>
+                                        <input type='text' value='' id='_S'>
+                                        <input type='text' value='' id='_T'>
+                                        <input type='text' value='' id='_U'>
+                                        <input type='text' value='' id='_V'>
+                                        <input type='text' value='' id='_W'>
+                                        <input type='text' value='' id='_X'>
+                                        <input type='text' value='' id='_Y'>
+                                        <input type='text' value='' id='_Z'>
+
+                                   </div>
+
+                              </form>
+
+                              <form>
+                                   <div class="form-group">
+                                        <label for="keyword">Keyword:</label>
+                                        <input type="text" class="form-control" id="keyword" value="">
+                                   </div>
+                              </form>
+                              <button type="button" class="btn btn-primary m-1" onclick="generate();">Generate</button>
+
+                         </div>
+                    </div>
+
+                    <div class="encrypt-box card m-2">
+
+                         <div class="card-body">
+                              <h2>Encrypt your message</h2>
+                              <p>Use the tool above to set your key.</p>
+                              <form>
+                                   <div class="form-group">
+                                        <label for="plaintext">
+                                             <h3>Plaintext</h3>
+                                        </label>
+                                        <textarea class="form-control" id="plaintext" rows="6"
+                                             placeholder="Enter plaintext here..."></textarea>
+                                   </div>
+                              </form>
+
+                              <button type="button" class="btn btn-secondary m-1" data-toggle="collapse"
+                                   data-target="#text-options">Some text options</button>
+
+                              <div id="text-options" class="collapse">
+                                   <button type="button" class="btn btn-primary m-1" onclick="removeSpaces();">Remove
+                                        spaces</button>
+                                   <button class="btn btn-info m-1" onclick="toLowerCase();">Lowercase</button>
+                                   <button class="btn btn-success m-1" onclick="groupBy(3);">Groups of 3</button>
+                                   <button class="btn btn-dark m-1" onclick="groupBy(5);">Groups of 5</button>
+                                   <button class="btn btn-danger m-1" onclick="undo();">Undo</button>
+                              </div>
+
+
+
+
+
+                              <button type="button" class="btn btn-primary m-1"
+                                   onclick="substitute();">Encrypt!</button>
+
+
+                              <div id="encryption-successful" class="m-1" style="display:none">
+                                   <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-hide="alert">&times;</button>
+                                        You successfully encrypted your message.
+                                   </div>
+                              </div>
+
+                              <div id="encryption-failed" class="m-1" style="display:none">
+                                   <div class="alert alert-warning alert-dismissible">
+                                        <button type="button" class="close" data-hide="alert">&times;</button>
+                                        Something went wrong. Did you leave the message blank?
+                                   </div>
+                              </div>
+
+                              <br>
+
+                              <form class="mt-3">
+                                   <div class="form-group">
+                                        <label for="ciphertext">
+                                             <h3>Ciphertext</h3>
+                                        </label>
+                                        <textarea class="form-control" id="cipher" rows="6"></textarea>
+                                   </div>
+                              </form>
+                         </div>
+
+
+
+                    </div>
+
+                    <h2 class="mt-5">How to decrypt?</h2>
+                    <p>It's easy when you have the shift key. When you encrypt a message you shift all the letters to
+                         the <b>RIGHT</b>. To decrypt, you shift all the letters <b>LEFT.</b>
+                         If the shift key is K=3, then you shift all the letters <b>LEFT</b> by 3 letters.</p>
+
+                    <div class="decrypt-box card m-2">
+                         <div class="card-body">
+                              <h2>Decrypt your message:</h2>
+                              <p>Use the shift tool from above.</p>
+                              <form>
+                                   <div class="form-group">
+                                        <label for="ciphertext">
+                                             <h3>Ciphertext</h3>
+                                        </label>
+                                        <textarea class="form-control" id="encrypted" rows="6"
+                                             placeholder="Enter ciphertext here..."></textarea>
+                                   </div>
+                              </form>
+
+                              <br>
+                              <button type="button" class="btn btn-primary m-1" onclick="decrypt();">Decrypt!</button>
+
+                              
+                              <div id="decryption-successful" class="m-2" style="display:none">
+                                   <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-hide="alert">&times;</button>
+                                        You completed the decryption? Were you successful?
+                                   </div>
+                              </div>
+
+                              <div id="decryption-failed" class="m-2" style="display:none">
+                                   <div class="alert alert-warning alert-dismissible">
+                                        <button type="button" class="close" data-hide="alert">&times;</button>
+                                        Something went wrong. Did you leave the message blank?
+                                   </div>
+                              </div>
+
+                              <form class="mt-3">
+                                   <div class="form-group">
+                                        <label for="plaintext">
+                                             <h3>Plaintext</h3>
+                                        </label>
+                                        <textarea class="form-control" id="decrypted" rows="6"></textarea>
+                                   </div>
+
+
+                              </form>
+
+                         </div>
+                    </div>
+
+               </div> <!-- end of main content-->
+               <!-- <div class="col-lg-1"></div> -->
+
+          </div>
+     </div>
+
+     <div class="container-fluid footer bg-dark text-light p-3">
+          <p>&copy; Brian Veitch</p>
+     </div>
+
+     <!-- Custom JS -->
+     <script src="js/scripts.js"></script>
+     <script src="js/keyword.js"></script>
+
+
+</body>
+
+</html>

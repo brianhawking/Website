@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Brian Veitch</title>
+
+     <link rel="stylesheet" href="css/style.css">
+     <script src="https://use.fontawesome.com/fe43a6e96a.js"></script>
+</head>
+
+<body>
+
+     <header class="header">
+
+          <div class="logo">
+               <!-- <img src="images/logo.png" alt="Brian's Logo"> -->
+               <h1><a href="index.html">Brian Veitch</a></h1>
+          </div>
+
+
+          <nav class="nav">
+               <ul class="nav__list" id="nav__list">
+                    <li class="nav__list-item"><a class="link" href="#about-me"><i class="fas fa-user"></i> About Me</a></li>
+                    <li class="nav__list-item"><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                    <li class="nav__list-item"><a href="#resume"><i class="fas fa-briefcase"></i> Resume</a></li>
+                    <li class="nav__list-item"><a href="#contact-me"><i class="fas fa-envelope"></i> Contact</a></li>
+               </ul>
+          </nav>
+
+          <i onclick="toggleMenu()" id="menu" class="fas fa-bars menu"></i>
+
+     </header>
+
+     <section class="hero">
+          <img src="images/logo.png" alt="" class="hero__image">
+          <div class="hero__title">
+               <h1>Hi, my name is
+                    <span class="emphasize">Brian Veitch</span>
+               </h1>
+          </div>
+          <div class="hero__subtitle">
+               <p>Developer, Teacher, YouTuber</p>
+          </div>
+     </section>
+
+     <div id="about-me" class="buffer"> </div>
+     <section class="container container-light">
+          <div class="content">
+               <h2 class="content__title">
+                    About Me
+               </h2>
+
+               <h3 class="content__subtitle">
+
+               </h3>
+
+               <div class="profile">
+                    <div class="profile__image">
+                         <img src="images/brian-veitch.JPG" alt="">
+                    </div>
+
+                    <div class="profile__description">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis amet repellat
+                              architecto harum quos rem, rerum consectetur omnis vitae odit voluptatum praesentium
+                              perferendis unde modi libero cumque dolore. Repellendus, velit!</p>
+                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam illum repudiandae quis omnis
+                              exercitationem impedit nobis eos animi soluta illo, eligendi dignissimos nihil obcaecati
+                              vitae! Repudiandae dolore illum voluptates neque.</p>
+                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam illum repudiandae quis omnis
+                              exercitationem impedit nobis eos animi soluta illo, eligendi dignissimos nihil obcaecati
+                              vitae! Repudiandae dolore illum voluptates neque.</p>
+
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <div id="projects" class="buffer"></div>
+     <section class="container container-dark">
+          <div class="content">
+               <h2 class="content__title">
+                    Projects
+               </h2>
+               <h3 class="content__subtitle">
+
+               </h3>
+
+               <div class="projects">
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Row Reduction</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>xCode, Swift</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/rowreductionicon.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> More Info</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Simplex Method</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                        sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci
+                                        pariatur autem eum eius optio laborum vel doloribus fugiat?
+
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>xCode, Swift</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/rowreductionicon.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Info</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Lights Out</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>Phaser Framework, Javascript</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/websites/lights-out.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Game</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Encryption / Decryption Tools</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>Bootstrap, Javascript, HTML, CSS</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/websites/frequency-analysis.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Site</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Extreme TicTacToe</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>Phaser Framework, Javascript, HTML, CSS</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/websites/tictactoe.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Site</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Block Party Website</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>HTML, CSS, SASS, Javascript</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/websites/block-party-3.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Site</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+
+                    <div class="project-card">
+                         <div class="project-card__name">
+                              <h3>Janky's Bar and Grill</h3>
+                         </div>
+                         <div class="project-card__description">
+                              <h4>Description: </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus perspiciatis
+                                   sapiente iste ab dolore nihil quo quidem, expedita magni veniam adipisci pariatur
+                                   autem eum eius optio laborum vel doloribus fugiat?
+                              </p>
+                         </div>
+                         <div class="project-card__tech">
+                              <h4>Technology Used:</h4>
+                              <p>HTML, CSS, SASS, Javascript</p>
+                         </div>
+                         <div class="project-card__image">
+                              <img src="images/websites/jankys-bar-and-grill.png" alt="">
+                         </div>
+
+                         <div class="project-card__buttons">
+                              <div class="button"><a href=""><i class="fas fa-desktop"></i> View Site</a></div>
+                              <div class="button"><a href=""><i class="fab fa-github"></i> View Code</a></div>
+                         </div>
+                    </div>
+               </div>
+
+
+
+          </div>
+     </section>
+
+     <div id="resume" class="buffer"></div>
+     <section class="container container-light">
+          <div class="content">
+               <h2 class="content__title">
+                    Resume
+               </h2>
+
+               <div class="resume">
+                    <!--Education-->
+                    <section class="resume__group">
+
+                         <div class="resume__group-item">
+                              <h3 class="resume__group-item-title">
+                                   <b>McHenry County College</b>
+                                   <div class="separator"></div>
+                                   2021 - Present
+                              </h3>
+                              <h4 class=resume__group-item-subtitle>Associates in Applied Sciences</h4>
+                              <h5 class="resume__group-item-subtitle_2">Mobile App Design and Development</h5>
+                         </div>
+
+                         <div class="resume__group-item">
+                              <h3 class="resume__group-item-title">
+                                   Northern Illinois University
+                                   <div class="separator"></div>
+                                   2006 - 2007
+                              </h3>
+                              <h4 class=resume__group-item-subtitle>Master of Science</h4>
+                              <h5 class="resume__group-item-subtitle_2">Pure Mathematics</h5>
+                         </div>
+
+                         <div class="resume__group-item">
+                              <h3 class="resume__group-item-title">
+                                   Northern Illinois University
+                                   <div class="separator"></div>
+                                   2002 - 2006
+                              </h3>
+                              <h4 class=resume__group-item-subtitle>Bachelor of Science</h4>
+                              <h5 class="resume__group-item-subtitle_2">General Mathematics</h5>
+                         </div>
+
+                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt corrupti, enim, et debitis
+                              odio eveniet odit harum commodi fugiat officia ut animi voluptates voluptas reprehenderit
+                              maiores tempora vero molestiae architecto.</p>
+                         <p>Aliquam deleniti laboriosam facilis, error sed, molestias dolorem rem sit magni culpa
+                              adipisci officia ipsum quibusdam quis quae laborum id cupiditate et asperiores in
+                              distinctio eos inventore porro iure? Tempora!</p>
+                         <p>Error in delectus cumque ratione velit commodi aspernatur tenetur mollitia reiciendis eius,
+                              enim nulla laudantium iusto quae illum ipsum, similique cupiditate! Quos unde laborum
+                              autem consectetur modi ad iste sequi.</p>
+
+                    </section>
+               </div>
+          </div>
+     </section>
+
+
+
+     <div id="contact-me" class="buffer"></div>
+     <section class="container container-dark">
+          <div class="content">
+               <h2 class="content__title">
+                    Contact Me
+               </h2>
+
+               <div class="contact">
+
+                    <div class="contact__direct">
+                         <h3>Get in touch directly</h3>
+                         <ul class="contact__direct-list">
+                              <div class="contact__direct-list-item"><i class="fas fa-phone"></i> 815-404-0576</div>
+                              <div class="contact__direct-list-item"><i class="fas fa-envelope"></i> beveitch@gmail.com
+                              </div>
+                              <div class="contact__direct-list-item"><i class="fab fa-github"></i> Github</div>
+                              <div class="contact__direct-list-item"><i class="fab fa-linkedin"></i> LinkedIn</div>
+                         </ul>
+                    </div>
+                    <form action="" class="contact-form">
+
+                         <label for="name">Name:</label>
+                         <br><br>
+                         <input type="text" name="name">
+                         <br>
+
+                         <label for="email">Email:</label>
+                         <br><br>
+                         <input type="email" name="email">
+                         <br>
+
+                         <label for="message">Leave a message:</label>
+                         <br><br>
+                         <textarea name="message" cols="30" rows="10"></textarea>
+                         <br>
+
+                         <div class="callToAction">
+                              <button class="callToAction__btn">Send Message</button>
+                         </div>
+                    </form>
+               </div>
+
+
+          </div>
+     </section>
+
+
+
+
+     <script src="js/script.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+
+</body>
+
+</html>
