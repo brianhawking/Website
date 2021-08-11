@@ -127,6 +127,8 @@ ul {
 :root {
   --ff-text: 'Open Sans', sans-serif;
   --ff-secondary-text: 'Indie Flower', cursive;
+  --clr-dark: #353A3F;
+  --clr-light: #ffffff;
 }
 
 html {
@@ -260,12 +262,12 @@ body {
 }
 
 .container-light {
-  background-color: white;
+  background-color: var(--clr-light);
   color: black;
 }
 
 .container-dark {
-  background-color: black;
+  background-color: var(--clr-dark);
   color: white;
 }
 

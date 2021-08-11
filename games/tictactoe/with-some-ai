@@ -1,0 +1,464 @@
+Ttt.Game = function (game) {
+
+    this.gameover;
+    this.restart;
+    
+    this.timer;
+    this.music;
+    this.ouch;
+    this.boom;
+    this.ding;
+    
+    this.player = [];
+
+    this.squareGroup;
+    this.squareRow;
+    this.squareCol;
+    this.squareRange; 
+    
+   
+    this.boardOffsetY = 20;
+    this.offsetX = 25;
+    this.offsetY = 20 + this.boardOffsetY;
+    //this.offsetX = 0;
+    this.offsetY = 0 + this.boardOffsetY;
+    
+    // refers to x
+    this.squareCol = [35, 95, 155, 235, 295, 355, 435, 495, 555];
+    
+    // refers to y
+    this.squareRow  = [40, 100, 160, 240, 300, 360, 440, 500, 560];
+   // this.mainSquare = [[20,20], [219,20], [417,20], [0,218], [220,218], [420,218], [20,420], [220,420], [420,420]];
+    
+    this.mainSquareX = [0, 200, 400];
+    this.mainSquareY = [0, 200, 400];
+    
+    this.boxes = [];
+    this.activeSquare;
+    
+
+    
+    this.currentActiveRow = 1;
+    this.currentActiveCol = 0;
+   
+    this.playerText;
+    
+    
+    this.anyBox = true;
+
+    
+    // this are the points needed for a tic tac toe box win
+    this.wins = [7, 56, 448, 73, 146, 292, 273, 84];
+    
+    // this refers to the large boxes.  0 means they are valid 
+    this.largeBox = [];
+    
+    // this refers to small boxes.  0 means they are valid.
+    this.smallBox = [];
+    
+    this.firstTime = true;
+    
+   
+    this.currentPlayer = 0;
+    
+    
+};
+
+function Player (n) {
+    this.name = n;
+    this.smallCells = [];
+    this.largeCells = [];
+    this.addBox = function addBox (sr, sc, lr, lc) {
+       
+        // finds the current large Box clicked
+        
+        var largeBox = this.determineBox(lr,lc);
+        
+        // finds the next large box, also shows the current small box clicked
+        
+        var smallBox = this.determineBox(sr,sc);
+        
+        // box 
+        this.smallCells[largeBox][smallBox] = 1;
+        
+        //console.log(largeBox, this.smallCells[largeBox]);
+    };
+    this.determineBox = function determineBox (row, col) {
+        return 3*row + col;   
+    }
+}
+
+Ttt.Game.prototype = {
+    
+    create: function () {
+        this.gameover = false;
+        
+        
+        
+        
+//       this.music = this.add.audio('game_audio');
+//       this.music.play('', 0, 0.3, true);
+//        this.ouch = this.add.audio('hurt_audio');
+//        this.boom = this.add.audio('explosion_audio');
+//        this.ding = this.add.audio('select_audio');
+        
+        
+        
+        this.buildBoard();
+        
+    },
+    
+    buildBoard: function () {
+        
+        
+        
+        this.player = [];
+        for( var i = 0; i < 2; i++){
+            this.player[i] = new Player();
+        }
+        
+        for( var i = 0; i < 9; i++) {
+            this.player[0].smallCells[i] = [0,0,0,0,0,0,0,0,0];
+            this.player[1].smallCells[i] = [0,0,0,0,0,0,0,0, 0];
+            
+        }
+        
+        this.player[0].largeCells = [0,0,0,0,0,0,0,0,0];
+        this.player[1].largeCells = [0,0,0,0,0,0,0,0,0];
+        
+        for(var i = 0; i < 81; i++) {
+        
+            this.smallBox[i] = 0;   
+        
+        }
+        
+        this.largeBox = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        this.anyBox = true;
+        
+        
+        var board = this.add.image(this.world.width/2,this.boardOffsetY, 'board');
+      //  board.anchor.setTo(0.5, 0.5);
+        board.anchor.setTo(.5,0);
+        
+       // this.player = 0;
+        
+        
+        var text = "Player X";
+        if( this.firstTime == true){
+            this.playerText = this.add.bitmapText(this.world.centerX - 300, this.world.height-85, 'darling', text, 60);
+        }
+        else {
+            this.playerText.text = text;   
+        }
+        
+        this.restart = this.add.bitmapText(this.world.centerX+50, this.world.height-85, 'darling', "Restart", 60);
+        
+        this.restart.inputEnabled = true;
+        
+        this.restart.events.onInputDown.add(this.restartGame, this);
+        
+  
+        this.firstTime = false;
+        this.startActiveSquare();
+        this.buildSquares();
+        
+        
+    },
+    
+    startActiveSquare: function (){
+        
+        this.activeSquare = this.add.image(this.mainSquareX[this.currentActiveCol]+this.offsetX, this.mainSquareY[this.currentActiveRow]+this.offsetY   , 'outline');
+        this.activeSquare.alpha=1;
+        this.activeSquare.inputEnabled = true;
+
+         var tween = this.add.tween(this.activeSquare);
+            
+            tween.to( { alpha: 0  }, 1000, Phaser.Easing.Linear.None, true, 0); 
+
+    },
+    
+    
+    buildSquares: function() {
+        this.squareGroup = this.add.group();
+        this.squareGroup.enableBody = true;
+
+        this.squareRange = 30;
+
+        var counter = 0;
+        for(var i = 0; i < this.squareRow.length; i++){
+              for(var j = 0; j < this.squareCol.length; j++) {
+                    var square = this.squareGroup.create(this.squareCol[i]+this.offsetX, this.squareRow[j]+this.offsetY, 'boxes', 0);
+                   square.anchor.setTo(0.5, 0.5);
+                    square.inputEnabled = true;
+                   
+                   square.events.onInputDown.add(this.clicked, this);
+                 
+                    
+                   square.boxRow = i;
+                  square.boxCol = j;
+                  square.member = counter;
+                  
+                  counter++;
+            
+              }
+        }
+    },
+    
+    clicked: function(s) {
+      
+        
+        // finds the current large Box clicked
+        var playersLargeCol = Math.floor(s.boxCol/3);
+        var playersLargeRow = Math.floor(s.boxRow/3);
+        
+        // finds the next large box, also shows the current smal box clicked
+        var playersSmallCol = Math.floor(s.boxCol%3);
+        var playersSmallRow = Math.floor(s.boxRow%3);
+        
+        // is the small box locked?
+       
+        var individualBox = this.determineSmallBox(s.boxRow, s.boxCol);
+        
+    
+        if (this.smallBox[individualBox] == 1 || this.largeBox[this.determineBox(playersLargeRow, playersLargeCol)] == 1){
+            
+            return false;
+        }
+               
+        
+        // does the player have a free pick
+        
+        
+       
+        
+        
+        if( (playersLargeCol == this.currentActiveCol && playersLargeRow == this.currentActiveRow) || this.anyBox == true){
+            // player choose the active box
+            
+            this.currentActiveRow = playersSmallRow;
+            this.currentActiveCol = playersSmallCol;
+            
+            // switch frame
+            s.frame = (s.frame + 1 + this.currentPlayer)%3;
+           
+            
+            // move active square
+            var tween = this.add.tween(this.activeSquare);
+            tween.to({alpha:1}, 50, Phaser.Easing.Linear.None, true, 0);
+            tween.to( {x: this.mainSquareY[playersSmallCol]+this.offsetX-5, y:this.mainSquareX[playersSmallRow]+this.offsetY-5} , 1000, Phaser.Easing.Quadratic.InOut, true, 0);
+            
+             this.smallBox[individualBox] = 1;
+                
+            
+            this.anyBox = false;
+            
+            if (this.largeBox[this.determineBox(playersSmallRow, playersSmallCol)] == 1) {
+                this.anyBox = true;   
+                tween.to({alpha:0}, 50, Phaser.Easing.Linear.None, true, 0);
+            }
+            
+            this.player[this.currentPlayer].addBox( playersSmallRow, playersSmallCol, playersLargeRow, playersLargeCol);
+       //console.log(playersSmallRow, playersSmallCol, playersLargeRow, playersLargeCol);
+        
+            var didYouWin = this.checkIfWinner(this.currentPlayer, playersLargeRow, playersLargeCol, 'small');
+                
+                if(didYouWin) {
+                    this.add.sprite(this.mainSquareX[playersLargeCol]+20,this.mainSquareY[playersLargeRow]+20, 'xo_overall', this.currentPlayer);    
+                    this.player[this.currentPlayer].largeCells[this.determineBox(playersLargeRow, playersLargeCol)] = 1;
+                    this.largeBox[this.determineBox(playersLargeRow, playersLargeCol)] = 1;
+
+                    // is the next square the same as the newly locked square
+                    if (this.largeBox[this.determineBox(this.currentActiveRow, this.currentActiveCol)] == 1) { 
+                        this.anyBox = true;
+                        var tween = this.add.tween(this.activeSquare);
+
+                        tween.to( { alpha: 0  }, 1000, Phaser.Easing.Linear.None, true, 0); 
+                    }   
+                }
+            
+            this.checkIfWinner(this.currentPlayer, playersLargeRow, playersLargeCol, 'large');
+        
+            
+         
+            if(this.playerText.text == "Player X"){
+                this.playerText.text="Player O";
+            }
+            else {
+                this.playerText.text = "Player X";   
+            }    
+            
+            
+        this.currentPlayer = (this.currentPlayer+1)%2;
+            
+            if(this.currentPlayer == 1){
+                // AI
+                row = this.currentActiveRow;
+                col = this.currentActiveCol;
+                var list = [];
+                var validBoxes = [];
+                
+
+                // row,col represents the large box row.  Middle right is (1,2)
+               // console.log(row, col);
+                var counter = 0;
+                for ( var i = 0; i < 3; i++ ) {
+                    for (var k = 0; k < 3; k++) {
+                        
+                         if ( this.smallBox[this.determineSmallBox(3*row + i, 3*col  + k)] == 0){
+                             
+                             validBoxes[counter] = [ i, k, this.determineSmallBox(3*row + i, 3*col  + k) ];
+       
+                            
+                             counter++;
+                           
+                             
+                             
+                             
+                         }
+                        
+                    }
+                    
+                
+                }
+                
+              
+                var randomBox = this.rnd.integerInRange(0,counter-1);
+                this.player[this.currentPlayer].addBox( validBoxes[randomBox][0], validBoxes[randomBox][1], row, col);
+            
+                //console.log(validBoxes[randomBox][0],validBoxes[randomBox][1], validBoxes[randomBox][2]);
+                
+               
+                
+//                 // switch frame
+               // console.log( this.squareGroup.children[validBoxes[randomBox][2]]);
+                 this.squareGroup.children[validBoxes[randomBox][2]].frame = (this.squareGroup.children[ validBoxes[randomBox][2] ].frame + 1 + this.currentPlayer)%3;
+          
+                console.log(validBoxes[randomBox][0],validBoxes[randomBox][1]);
+            
+                // move active square
+                var tween = this.add.tween(this.activeSquare);
+               // tween.to({alpha:1}, 50, Phaser.Easing.Linear.None, true, 0);
+                tween.to( {x: this.mainSquareY[validBoxes[randomBox[0]]]+this.offsetX-5, y:this.mainSquareX[validBoxes[randomBox[1]]]+this.offsetY-5} , 1000, Phaser.Easing.Quadratic.InOut, true, 0);
+
+                // this.smallBox[individualBox] = 1;
+
+                
+          this.currentPlayer = (this.currentPlayer+1)%2;
+                  
+                this.currentActiveRow = Math.floor( validBoxes[randomBox][0] % 3 );
+                 this.currentActiveCol = Math.floor(validBoxes[randomBox][1]%3);
+            }
+            
+
+           
+            
+            
+        }
+        
+        
+    },
+    
+    
+    
+    checkIfWinner: function (p, row, col, size) {
+        
+        if (size == 'small') {
+            var player = this.player[p].smallCells[this.determineBox(row, col)];   
+        }
+        else {
+            var player = this.player[p].largeCells;   
+            
+        }
+        var winner = 0;
+        //console.log(player);    
+        // check rows
+        
+        var sumRow = [0,0,0];
+        for (var k = 0; k < 3; k++) {
+            for (i = 0; i < 3; i++) {
+                sumRow[k] = sumRow[k] + player[3*k+i];
+            }
+            if( sumRow[k] == 3 ) {
+                winner = 1;   
+            }
+            
+        }
+        
+        var sumCol = [0, 0, 0];
+        for (var k = 0; k < 3; k++) {
+            for (var i = 0; i < 3; i++){
+                sumCol[k] = sumCol[k] + player[k+3*i]; 
+            }
+            if( sumCol[k] == 3 ) {
+                winner = 1; 
+            }
+        }
+        
+        var sumDLR = player[0] + player[4] + player[8];
+        var sumULR = player[6] + player[4] + player[2];
+        
+        if( sumDLR == 3 || sumULR == 3 ) {
+                winner = 1;   
+            }
+        
+        if(winner == 1 && size == 'small') {
+            
+            return true;
+        }
+        
+        if(winner == 1 && size != 'small'){
+            this.gameOver(this.currentPlayer);   
+        }
+        
+        return false;
+    },  
+    
+    determineSmallBox: function (row, col){
+        return 9*row + col;
+    },
+    
+    determineBox: function (row, col) {
+        return 3*row + col;   
+    },
+    
+    
+    
+    gameOver: function (player) {
+        text = this.add.bitmapText(this.world.centerX-270, this.world.centerY-150, 'darling', 'Game Over!\n Click to \n play again.', 80);
+        text.inputEnabled = true;
+        
+        text.events.onInputDown.add(this.restartGame, this);
+        //text.events.onInputDown.add(this.buildBoard, this);
+
+    },
+    
+    restartGame: function () {
+        this.buildBoard();   
+    },
+    
+    update: function() {
+    //    this.physics.arcade.overlap(this.spacerockgroup, this.burst, this.burstCollision, null, this);
+   //     this.physics.arcade.overlap(this.spacerockgroup, this.bunnygroup, this.bunnyCollision, null, this);
+     //   this.physics.arcade.overlap(this.bunnygroup, this.burst, this.friendlyFire, null, this);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+};

@@ -1,0 +1,37 @@
+    if(this.currentPlayer == 1){
+                // AI
+                row = this.currentActiveRow;
+                col = this.currentActiveCol;
+                var list = [];
+                
+                var counter = 0;
+                for ( var i = 0; i < 3; i++ ) {
+                    for (var k = 0; k < 3; k++) {
+                         if ( this.smallBox[this.determineSmallBox(3*row + i, 3*col  + k)] == 0){
+                            list[counter] = this.determineSmallBox(3*row + i, 3*col + k);
+                             counter++;
+                            // console.log( 3*row+i, 3*col+k, this.determineBox(row, col )) ;
+                            this.player[this.currentPlayer].addBox( 3*row+i, 3*col+k, col, row);
+                             
+                            var didAIWin = this.checkIfWinner(this.currentPlayer, row, col);
+                             if(didAIWin) {
+                                 this.add.sprite(this.mainSquareX[col]+20,this.mainSquareY[row]+20, 'xo_overall', this.currentPlayer);
+                                 var tween = this.add.tween(this.activeSquare);
+            tween.to({alpha:1}, 50, Phaser.Easing.Linear.None, true, 0);
+            tween.to( {x: this.mainSquareY[playersSmallCol]+this.offsetX-5, y:this.mainSquareX[playersSmallRow]+this.offsetY-5} , 1000, Phaser.Easing.Quadratic.InOut, true, 0);
+                                 
+                                
+                                return true;
+                                
+                             }
+                             else {
+                               var randomPick =  this.add.sprite(this.mainSquareX[col]+20,this.mainSquareY[row]+20, 'xo_overall', this.currentPlayer); 
+                             }
+                             
+                             
+                         }
+                        
+                    }
+                }
+                // list[] contains the smallBoxes that are valid 
+            }
