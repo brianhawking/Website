@@ -9,3 +9,6 @@ function toggleMenu() {
     x.className = "nav__list";
   }
 }
+
+// get current year for copyright
+document.getElementById("year").innerHTML = new Date().getFullYear();

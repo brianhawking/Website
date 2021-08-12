@@ -1,3 +1,4 @@
+/* Design by Brian Veitch */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -211,7 +212,7 @@ body {
   display: grid;
   grid-template-columns: min-content max-content;
   grid-template-areas: "image title" "image subtitle";
-  grid-gap: 25px;
+  grid-gap: 2px 20px;
   margin: 140px auto 0px auto;
   width: min-content;
   position: relative;
@@ -493,6 +494,15 @@ body {
   margin: 10px;
 }
 
+.contact__direct-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact__direct-list-item a:hover {
+  text-decoration: underline;
+}
+
 .contact-form {
   margin: 10px auto;
   max-width: 600px;
@@ -558,6 +568,13 @@ body {
 
 .list__item {
   margin: 10px;
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 @media screen and (max-width: 800px) {
@@ -655,6 +672,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "subtitle" "image";
     width: 90%;
+    grid-gap: 20px 0px;
   }
   .hero__image {
     width: 50%;
