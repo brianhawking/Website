@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Schedule of Events - Fountain Green Block Party</title>
+
+     <!-- custom reset-->
+     <link rel="stylesheet" href="css/reset.css">
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+     <!-- custom css-->
+     <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+     <header class="container-fluid p-0 pt-3 header">
+
+          <div class="mobile-logo">
+               <a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+           </div>
+ 
+
+          <i onclick="toggleMenu()" id="menu" class="fas fa-bars small-menu"></i>
+
+          <div class="time">
+               <div class="time__element">
+                    <p class="time__text">
+                         DAYS
+                    </p>
+                    <p id="days" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         HOURS
+                    </p>
+                    <p id="hours" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         MIN
+                    </p>
+                    <p id="minutes" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         SEC
+                    </p>
+                    <p id="seconds" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+
+
+          </div>
+
+
+          <div class="raffle">
+               <a href="raffle.html" class="btn">Buy Raffle Ticket
+               </a>
+          </div>
+
+
+          <nav class="navigation">
+               <ul class="nav-list" id="nav-list">
+                    <li class="nav-list__item nav-list__item-empty mobile-only"><a href="index.html"><img style="width: 150px;" src="images/logo-circle.svg" alt="Picture of Logo"></a></li>
+                    <li class="nav-list__item"><a href="index.html">Home</a></li>
+                    <li class="nav-list__item"><a href="registration.html">Registration</a></li>
+                    <li class="nav-list__item nav-list__item-empty desktop-only"><a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+                    </li>
+                    <li class="nav-list__item"><a href="#">Schedule</a></li>
+                    <li class="nav-list__item"><a href="charity.html">Charity</a></li>
+               </ul>
+          </nav>
+     </header>
+
+     <section class="main container">
+
+          <div class="row mt-5">
+               <div class="col">
+                    <h1 class="mt-5">Schedule of Events</h1>
+               </div>
+          </div>
+
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">10:00am - 12:00pm <br> 2:00 - 4:00pm</div>
+                         <div class="event__name">Board Games/Card Games</div>
+                         <div class="event__description"><p>Bring your favorite board game or a deck of cards.  A designated area will be setup for you to play with friends and neighbors. Common board games are checkers, chess, Settlers of Catan, and Monopoly.  Decks of cards will be available. Any additional games are supplied by attendees.</p></div>
+                         <div class="raffle event__registration">
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">10:00am - 12:00pm <br> 2:00 - 4:00pm</div>
+                         <div class="event__name">Face painting</div>
+                         <div class="event__description"><p>Julie is a local resident who does face painting. She'll paint many Marvel and Disney characters, as well as quite a few animals. </p>
+                              <p>No registration required, though tips are welcome to help pay for supplies.</p></div>
+                         <div class="raffle event__registration">
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">10:00am - 11:00am</div>
+                         <div class="event__name">Bag Toss Tournament</div>
+                         <div class="event__description"><p>Also known as Cornhole. Grab a friend or get paired with another player. Players take turns tossing bean bags at the hole on the opposite board until all bags are thrown. Points are tallied and then it's your partner's turn. Game continues until a team earns 21 points.</p>
+                         <p>This is a tournament with the normal structured brackets.  Once you lose, you're out. </p>
+                    <p>Make sure you come cheer on your friends and neighbors. </p></div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">11:30am - 1:30pm </div>
+                         <div class="event__name">Group Grilling Area</div>
+                         <div class="event__description"><p>Think of it as tailgating with your neighbors.  A section will be designated as the grilling area, separate from the rest of the block party.  Come spend time grilling with your friends and neighbors.</p></div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">12:30pm - 1:30pm</div>
+                         <div class="event__name">Water Balloon Toss</div>
+                         <div class="event__description"><p>Grab a friend or get paired with another player. Each player will gently toss a water balloon to their partner. If the other player catches it successfully, the partners take a step backwards. Continue doing this until you're either the last team left or you break your water balloon. Once you break the balloon, the game's over for you.</p></div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">2:00pm - 4:00pm</div>
+                         <div class="event__name">Make your own vinly t-shirt</div>
+                         <div class="event__description"><p>Local resident Casey will bring her cricket machine with a variety of designs. A vinyl design will be created and printed with a Cricket machine. BTW, it's fun to watch. Then the vinyl will be transferred to the t-shift using a heat press. </p>
+                         <p>Registration not required but recommended.  If no registered participants are being helped, then it's first come first serve. </p>
+                         <p>T-shirts cost $15 to help pay for Casey's supplies. </p>
+                    </div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">3:00pm - 5:00pm</div>
+                         <div class="event__name">Scavenger Hunt</div>
+                         <div class="event__description"><p>This scavenger will take you throughout the neighborhood and nto neighbors yards (with their permission). The winning team will win the Fountain Green Scavenger trophy. You get to bring it home and display it proudly for one year. It will be passed onto the winner's of next year's winning team.</p>
+                    </div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+
+          <div class="row justify-content-center m-3">
+               <div class="col">
+
+                    <div class="event">
+                         <div class="event__time">8:00pm - 10:00pm</div>
+                         <div class="event__name">Outdoor movie</div>
+                         <div class="event__description"><p>This year we will play Shrek. Stop by with a blanket or lawn chairs. Movie will start around 8:00pm. </p>
+                              <p>No registration required but recommended to make sure we have enough space. </p>
+                    </div>
+                         <div class="raffle event__registration">
+                              <a href="registration.html" class="btn">Register
+                              </a>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+
+
+
+
+     </section>
+
+     <footer class="container-fluid">
+          <ul class="social-links">
+               <li class="social-links__item"><a href="">Facebook</a></li>
+               <li class="social-links__item"><a href="">Instagram</a></li>
+               <li class="social-links__item"><a href="">Twitter</a></li>
+          </ul>
+
+          <div class="copyright row justify-content-center m-3" style="text-align:center;">
+               <div class="col">
+                    <p>&copy; 2021</p>
+               </div>
+          </div>
+     </footer>
+
+     <script src="js/scripts.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+
+</body>
+
+</html>

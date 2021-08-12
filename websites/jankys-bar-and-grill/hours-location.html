@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours and Location - Janky's Bar and Grill</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Six+Caps&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="title-and-menu">
+            <h1>Janky's</h1>
+            <div class="menu">
+                <i onclick="toggleMenu()" id="menu" class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <nav>
+            <ul id="nav-list" class="nav-list">
+                <li class="nav-item"><a href="index.html">HOME</a></li>
+                <li class="nav-item"><a href="menu.html" >MENU</a></li>
+                <li class="nav-item"><a href="#" class="active">HOURS/LOCATION</a></li>
+                <li class="nav-item"><a href="reservations.html">RESERVATIONS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="hero hero-hours-location">
+        <h1>Location and Hours</h1>
+    </section>
+
+    <section class="main-content">
+
+        <div class="map-hours">
+           
+                <iframe class="map" width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJw_drQvlsD4gRAhmJJaLB-l4&key=AIzaSyBMYcQZWSYu8DTZV1Z4sAUP67Qe1uJM_g8"></iframe>
+               
+            
+
+            <div class="hours">
+                <h2>Hours</h2>
+                <div class="item">
+                    <p>Sunday - Thursday </p>
+                    <p>5pm - 10pm</p>
+                </div>
+
+                <div class="item">
+                    <p>Friday - Saturday</p>
+                    <p>4pm - 11:30pm</p>
+                </div>
+            </div>
+
+            <div class="location">
+                <h2>Location</h2>
+                <p>8900 US HWY 14</p>
+                <p>Crystal Lake, IL 60014</p>
+                <p>(815) 455-3700</p>
+            </div>
+        </div>
+        
+            
+     
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; Janky's Bar and Grill</p>
+    </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("nav-list");
+            if (x.className == "nav-list") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav-list";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

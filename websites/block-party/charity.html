@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Charity - Fountain Green Block Party</title>
+
+     <!-- custom reset-->
+     <link rel="stylesheet" href="css/reset.css">
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+     <!-- custom css-->
+     <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+     <div class="flex-wrapper">
+          <header class="container-fluid p-0 pt-3 header">
+
+               <div class="mobile-logo">
+                   <a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+               </div>
+     
+               <i onclick="toggleMenu()" id="menu" class="fas fa-bars small-menu"></i>
+     
+               <div class="time">
+                    <div class="time__element">
+                         <p class="time__text">
+                              DAYS
+                         </p>
+                         <p id="days" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              HOURS
+                         </p>
+                         <p id="hours" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              MIN
+                         </p>
+                         <p id="minutes" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              SEC
+                         </p>
+                         <p id="seconds" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+     
+     
+               </div>
+     
+     
+               <div class="raffle">
+                    <a href="raffle.html" class="btn">Buy Raffle Ticket
+                    </a>
+               </div>
+     
+     
+               <nav class="navigation">
+                    <ul class="nav-list" id="nav-list">
+                         <li class="nav-list__item nav-list__item-empty mobile-only"><a href="index.html"><img style="width: 150px;" src="images/logo-circle.svg" alt="Picture of Logo"></a></li>
+                         <li class="nav-list__item"><a href="index.html">Home</a></li>
+                         <li class="nav-list__item"><a href="registration.html">Registration</a></li>
+                         <li class="nav-list__item nav-list__item-empty desktop-only"><a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+                         </li>
+                         <li class="nav-list__item"><a href="schedule.html">Schedule</a></li>
+                         <li class="nav-list__item"><a href="#">Charity</a></li>
+                    </ul>
+               </nav>
+          </header>
+     
+          <section class="main container">
+     
+               <div class="row mt-5">
+                    <div class="col">
+                         <h1>Charity</h1>
+                    </div>
+               </div>
+     
+               <div class="row">
+                    <div class="col">
+                         <p>Each year we run a charity raffle. You can <a href="raffle.html"> purchase a raffle ticket</a> for $20. First, second, and
+                              third place prizes are $100, $75, $50 respectively. The remaining money will be donated to the
+                              following charities below.</p>
+                         <p>Charities are randomly chosen by the residents of Fountain Green. Each year we randomly select 4
+                              from their list. You may vote on your preferred charity. Each charity below will receive money
+                              proportional to the votes. </p>
+                         <p>All block party attendees are able to vote.</p>
+                         <p>Raffle numbers will be drawn after the last event of the day. We will post the winning numbers
+                              below, in case you weren't able to attend the drawing. </p>
+                    </div>
+               </div>
+     
+               <div class="row">
+                    <div class="col">
+                         <div class="alert alert-success charity-vote" id="charity-vote-success">
+                              <strong>Success!</strong> Your vote has been recorded.  Thank you for your participation.
+                         </div>
+     
+                         <div class="alert alert-warning charity-vote" id="charity-vote-fail">
+                              <strong>Sorry!</strong> Please select a charity.
+                         </div>
+                    </div>
+               </div>
+     
+               <div class="row justify-content-center">
+                    <div class="col-6" style="max-width: 600px;">
+                         <form onsubmit="registerVote();return false">
+     
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="charity-1" name="charity">ASPCA
+                                   </label>
+                              </div>
+     
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="charity-2" name="charity">Kids of
+                                        St. Jude
+                                   </label>
+                              </div>
+     
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="charity-3" name="charity">Cancer
+                                        Research Institute
+                                   </label>
+                              </div>
+     
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="charity-4" name="charity">Habitat
+                                        for Humanity
+                                   </label>
+                              </div>
+                              <button type="submit" 
+                                   class="btn btn-fountain mb-5">Submit</button>
+                         </form>
+                    </div>
+               </div>
+     
+          </section>
+     
+          <footer class="container-fluid">
+               <ul class="social-links">
+                    <li class="social-links__item"><a href="">Facebook</a></li>
+                    <li class="social-links__item"><a href="">Instagram</a></li>
+                    <li class="social-links__item"><a href="">Twitter</a></li>
+               </ul>
+     
+               <div class="copyright row justify-content-center m-3" style="text-align:center;">
+                    <div class="col">
+                         <p>&copy; 2021</p>
+                    </div>
+               </div>
+          </footer>
+     </div>
+
+     
+
+     <script src="js/scripts.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+
+</body>
+
+</html>

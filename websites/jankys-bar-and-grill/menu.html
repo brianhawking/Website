@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Jankys Bar and Grill</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Six+Caps&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="title-and-menu">
+            <h1>Janky's</h1>
+            <div class="menu">
+                <i onclick="toggleMenu()" id="menu" class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <nav>
+            <ul id="nav-list" class="nav-list">
+                <li class="nav-item"><a href="index.html">HOME</a></li>
+                <li class="nav-item"><a href="#" class="active">MENU</a></li>
+                <li class="nav-item"><a href="hours-location.html">HOURS/LOCATION</a></li>
+                <li class="nav-item"><a href="reservations.html">RESERVATIONS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="hero hero-menu">
+        <h1>MENU</h1>
+    </section>
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>Janky's Specials</h2>
+        </div>
+
+        <div class="left-column">
+            <div class="menu-item">
+                <h3 class="item-name">Monday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>All you can eat ribs</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Tuesday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>All you can eat fried chicken</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Wednesday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>Crab legs</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Thursday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>Half-priced pizza</p>
+                </div>
+            </div>
+        </div> <!--end left column-->
+
+        <div class="right-column">
+            <div class="menu-item">
+                <h3 class="item-name">Friday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>All you can eat fish fry</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Saturday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>Prime Rib</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Sunday</h3>
+                <div class="item-price"></div>
+                <div class="item-description">
+                    <p>Charbroiled Pork Chops</p>
+                </div>
+            </div>
+        </div> <!--end right column-->
+    </section>
+    </section>
+
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>APPETIZERS</h2>
+        </div>
+
+        <div class="left-column">
+            <div class="menu-item with-image">
+                <a class="item-image" onclick="popup('wings.jpg')"><img src="images/wings.jpg" alt="Pic of Buffalo Wings"></a>
+                <h3 class="item-name">Wings</h3>
+                <div class="item-price">13.95</div>
+                <div class="item-description">
+                    <p>6 wings with your choice of buffalo, honey, siraracha, or garlic. With bleu cheese and ranch.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Fried Bulvarian Pretzel</h3>
+                <div class="item-price">11.95</div>
+                <div class="item-description">
+                    <p>served with our cheese sauce and stone ground mustard.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <div class="menu-item">
+                <!-- <a class="item-image" onclick="popup('wings.jpg')"><img src="images/wings.jpg" alt=""></a> -->
+                <h3 class="item-name">Potato Skins</h3>
+                <div class="item-price">9.95</div>
+                <div class="item-description">
+                    <p>Based Idaho potato skins, cheddar cheese, bacon, and sour cream.
+                    </p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <!-- <a class="item-image" onmouseover="popup('wings.jpg')"><img src="images/wings.jpg" alt=""></a> -->
+                <h3 class="item-name">Mediterranean Shrimp</h3>
+                <div class="item-price">9.95</div>
+                <div class="item-description">
+                    <p>Sauteed in olive oil, fresh garlic tomatoes, bell peppers, imported feta and fontinella cheese. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>Steaks and Chops</h2>
+            <p>Includes 2 sides</p>
+        </div>
+        
+        <div class="left-column">
+            <div class="menu-item">
+                <h3 class="item-name">Filet Medallions Al Forno</h3>
+                <div class="item-price">34.95</div>
+                <div class="item-description">
+                    <p>A trio of 3ox. filet medallions with an al forno curst</p>
+                </div>
+            </div>
+
+            <div class="menu-item with-image">
+                <a class="item-image" onclick="popup('filet-mignon.jpg')"><img src="images/filet-mignon.jpg" alt="Pic of Filet Mignon"></a>
+                <h3 class="item-name">Filet Mignon (single)</h3>
+                <div class="item-price">24.95</div>
+                <div class="item-description">
+                    <p>One 6 oz. filet. Add $15 for twin</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <div class="menu-item">
+                <h3 class="item-name">London Broil </h3>
+                <div class="item-price">32.95</div>
+                <div class="item-description">
+                    <p>Beef tenderloin, mushrooms, and gravy.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Charbroiled Pork Chops</h3>
+                <div class="item-price">32.95</div>
+                <div class="item-description">
+                    <p>Four rack chops, olive oil, garlic, and herbs. </p>
+                </div>
+            </div>
+        </div> <!--End left column-->
+
+    </section>
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>Burgers</h2>
+            <p>Includes 1 side</p>
+        </div>
+        
+        <div class="left-column">
+    
+            <div class="menu-item">
+                <h3 class="item-name">French Onion Burger</h3>
+                <div class="item-price">14.95</div>
+                <div class="item-description">
+                    <p>Carmelized onions, topped with Swiss and Gruyere cheese.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">BBQ Bacon Burger</h3>
+                <div class="item-price">14.95</div>
+                <div class="item-description">
+                    <p>Piled high with smoked bacon with a side of BBQ sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Horseradish Burger</h3>
+                <div class="item-price">14.95</div>
+                <div class="item-description">
+                    <p>Served with a horseradish crust and sauce.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+
+            <div class="menu-item with-image">
+                <a class="item-image" onclick="popup('cheeseburger.jpg')"><img src="images/cheeseburger.jpg" alt="pic of cheeseburger"></a>
+                <h3 class="item-name">Classic Cheeseburger</h3>
+                <div class="item-price">13.95</div>
+                <div class="item-description">
+                    <p>Choose American, Swiss, or Cheddar, topped with lettuce, tomato, and pickles.</p>                
+                </div>
+            </div>
+
+            
+
+            <div class="menu-item">
+                <h3 class="item-name">Blue Cheese Burger</h3>
+                <div class="item-price">14.95</div>
+                <div class="item-description">
+                    <p>Rich Bleu cheese and lightly battered onion strings.</p>
+                </div>
+            </div>
+
+            
+
+        </div> <!--End Right Column-->
+
+    </section> <!--End Menu Category-->
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>Salads</h2>
+        </div>
+        
+        <div class="left-column">
+            <div class="menu-item">
+                <h3 class="item-name">California Salad</h3>
+                <div class="item-price">18.95</div>
+                <div class="item-description">
+                    <p>Grilled chicken, mixed lettuce, corn, avocado, apples, bleu cheese, tomatoes, and honey dijon dressing.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Beef and Bleu Salad</h3>
+                <div class="item-price">18.95</div>
+                <div class="item-description">
+                    <p>Tenderloin slices, mixed lettuce, onions, bleu cheese, and balsamic vinegrette.</p>
+                </div>
+            </div>
+        </div> <!--End Left Column-->
+
+        <div class="right-column">
+
+            <div class="menu-item">
+                <h3 class="item-name">Chicken and Bacon Salad</h3>
+                <div class="item-price">18.95</div>
+                <div class="item-description">
+                    <p>Grilled chicken, mixed greens, bacon, bleu cheese, eggs, tomato, and italian vinagrette.</p>
+                </div>
+            </div>
+
+        </div> <!--End Right column-->
+    </section> <!--End menu category-->
+
+    <div class="menu-category">
+        <div class="title">
+            <h2>Sides</h2>
+        </div>
+        
+        <div class="left-column">
+            <div class="menu-item">
+                <h3 class="item-name">Mixed Green Salad</h3>
+                <div class="item-price">5.95</div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Onion Rings</h3>
+                <div class="item-price">5.95</div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Soup of the Day</h3>
+                <div class="item-price">3.95</div>
+            </div>
+
+            
+
+        </div> <!-- end left column-->
+
+        <div class="right-column">
+
+            <div class="menu-item">
+                <h3 class="item-name">Garlic Fries</h3>
+                <div class="item-price">5.95</div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Truffle Fries</h3>
+                <div class="item-price">5.95</div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Mac and Cheese</h3>
+                <div class="item-price">4.95</div>
+            </div>
+
+        </div> <!--end right column-->
+    </div> <!--End Menu Category-->
+
+    <section class="menu-category">
+        <div class="title">
+            <h2>Signature Cocktails</h2>
+        </div>
+
+        <div class="left-column">
+            <div class="menu-item">
+                <h3 class="item-name">Gin Blossom</h3>
+                <div class="item-price">10.95</div>
+                <div class="item-description">
+                    <p>Hendrick's Gin and Elderflower topped with Prosecco</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Viatamin C Martini</h3>
+                <div class="item-price">11.95</div>
+                <div class="item-description">
+                    <p>Orange Vodka, Cointreau, OJ and Sour Mix</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Chocolate and Berries Martini</h3>
+                <div class="item-price">12.95</div>
+                <div class="item-description">
+                    <p>Smirnoff Raspberry Vodka, Godiva White Chocolate Liqueur, and White Creme de Cocoa.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <h3 class="item-name">French Raspberry Martini</h3>
+                <div class="item-price">11.95</div>
+                <div class="item-description">
+                    <p>Smirnoff Raspberry Vodka, Raspberry Liqueur, and a splash of pineapple juice.</p>
+                </div>
+            </div>
+        </div> <!--end left column-->
+
+        <div class="right-column">
+            <div class="menu-item">
+                <h3 class="item-name">Woodford Reserve Manhattan</h3>
+                <div class="item-price">12.95</div>
+                <div class="item-description">
+                    <p>Woodford Reserve Bourbon, Sweet Vermouth and Bitters</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">The Texan Martini</h3>
+                <div class="item-price">13.95</div>
+                <div class="item-description">
+                    <p>Tito's Handmade Vodka (Chilled) with your choice of garnish.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Scofflaw</h3>
+                <div class="item-price">12.95</div>
+                <div class="item-description">
+                    <p>Jack Daniel's Rye, Dry Vermouth, Grenadine, Lime Juice and Bitters</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="item-name">Royal Sidecar</h3>
+                <div class="item-price">12.95</div>
+                <div class="item-description">
+                    <p>Remy Martin 1738 Accord Royal, Cointreau and Lemon Juice</p>
+                </div>
+            </div>
+        </div><!-- end right column -->
+    </section>
+
+    <footer class="footer">
+        <p>&copy; Janky's Bar and Grill</p>
+    </footer>
+
+    <div id="popup">
+        <div class="overlay">
+            <div class="close"><a href="javascript:void(0)" onclick="closeOverlay()">&times;</a></div>
+            <img id="overlay-image" src="images/group-table.jpg" alt="">
+        </div>
+    </div>
+
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+   
+
+
+    <script>
+
+        function toggleMenu() {
+            var x = document.getElementById("nav-list");
+            if (x.className == "nav-list") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav-list";
+            }
+        }
+
+        function popup(imageName) {
+            var x = document.getElementById("popup");
+            x.style.display = "flex";
+            
+            var img = document.getElementById("overlay-image");
+            img.src = "images/"+imageName;
+        }
+
+        function closeOverlay() {
+            var x = document.getElementById("popup");
+            x.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

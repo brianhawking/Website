@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Janky's Bar and Grill</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Six+Caps&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="title-and-menu">
+            <h1>Janky's</h1>
+            <div class="menu">
+                <i onclick="toggleMenu()" id="menu" class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <nav>
+            <ul id="nav-list" class="nav-list">
+                <li class="nav-item"><a href="#" class="active">HOME</a></li>
+                <li class="nav-item"><a href="menu.html">MENU</a></li>
+                <li class="nav-item"><a href="hours-location.html">HOURS/LOCATION</a></li>
+                <li class="nav-item"><a href="reservations.html">RESERVATIONS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="hero hero-home">
+        <img class="logo" src="images/janky-logo.png" alt="Janky Logo">
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <figure>
+                <img src="images/phone.jpg" alt="Pic of Phone - Unsplash by Priscilla Du Preez">
+                <figcaption class="caption-overlay">
+                    <h2>Order Online</h2>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="images/party.jpg" alt="Celebration - Unsplash by Efren Barahona">
+                <figcaption class="caption-overlay">
+                    <h2>Host a Party</h2>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="images/gift-card.png" alt="Pic of Gift Gard">
+                <figcaption class="caption-overlay">
+                    <h2>Gift Cards</h2>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="main-content light">
+        <h2>About Us</h2>
+        <p>Janky's Bar and Grill offers medium quality, overpriced food, and spirits in a somewhat comfortable setting. You get a pub style 
+            meal for steakhouse prices. We also have a decent selection of cocktails, wines, and craft beers. 
+        </p>
+
+        <h2>Happy Hour Mon-Thurs 2-5pm</h2>
+        <p>$2 Domestic Pints & Bottles, $2.00 Rail Drinks, $1 Off All Drinks, $3 Off Appetizers
+        </p>
+        
+    </section>
+
+    <footer class="footer">
+        <p>&copy; Janky's Bar and Grill</p>
+    </footer>
+
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+
+    <script>
+        // used for responsive menu
+        function toggleMenu() {
+            var x = document.getElementById("nav-list");
+            console.log("style is " + x.style.display);
+            if (x.className == "nav-list") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav-list";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

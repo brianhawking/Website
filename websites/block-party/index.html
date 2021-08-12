@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Home - Fountain Green Block Party</title>
+
+     <!-- custom reset-->
+     <link rel="stylesheet" href="css/reset.css">
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+     <!-- custom css-->
+     <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+     <!-- 
+     <div class="menu">
+          <i onclick="toggleMenu()" id="menu" class="fas fa-bars"></i>
+      </div> -->
+
+
+     <header class="container-fluid p-0 pt-3 header">
+
+          <div class="mobile-logo">
+               <a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+
+          </div>
+ 
+
+          <i onclick="toggleMenu()" id="menu" class="fas fa-bars small-menu"></i>
+
+        
+          <div class="time">
+               <div class="time__element">
+                    <p class="time__text">
+                         DAYS
+                    </p>
+                    <p id="days" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         HOURS
+                    </p>
+                    <p id="hours" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         MIN
+                    </p>
+                    <p id="minutes" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+               <div class="time__element">
+                    <p class="time__text">
+                         SEC
+                    </p>
+                    <p id="seconds" class="time__remaining">
+                         &nbsp;
+                    </p>
+               </div>
+
+
+          </div>
+
+
+          <div class="raffle">
+               <a href="raffle.html" class="btn">Buy Raffle Ticket
+               </a>
+          </div>
+
+
+          <nav class="navigation">
+               <ul class="nav-list" id="nav-list">
+                    <li class="nav-list__item nav-list__item-empty mobile-only"><a href="index.html"><img style="width: 150px;" src="images/logo-circle.svg" alt="Picture of Logo"></a></li>
+                    <li class="nav-list__item"><a href="index.html">Home</a></li>
+                    <li class="nav-list__item"><a href="registration.html">Registration</a></li>
+                    <li class="nav-list__item nav-list__item-empty desktop-only"><a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+                    </li>
+                    <li class="nav-list__item"><a href="schedule.html">Schedule</a></li>
+                    <li class="nav-list__item"><a href="charity.html">Charity</a></li>
+               </ul>
+          </nav>
+     </header>
+
+     <section class="hero container-fluid">
+          <div class="hero__overlay">
+               <p>Come meet your neighbors with a day of food, fun, and good company.</p>
+          </div>
+     </section>
+
+     <div class="flex-wrapper">
+          <section class="main container">
+               <div class="row justify-content-center m-4" style="text-align:center;">
+                    <div class="col">
+                         <h1>Welcome to the Fountain Green Block Party!</h1>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <h2>Who we are!</h2>
+                         <p>We are the residents of Fountain Green Drive in Crystal Lake. Every year during the summer
+                              we throw a block party for our neighbors. You don't have to be a Fountain Greener to
+                              attend though. Typically we ask that you purchase a raffle ticket to participate in the
+                              day's events. Find out more about the raffle down below.</p>
+                         <p>Registration for games and events are required. So stop by, meet the neighbors, and have a
+                              great time!</p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <h2>Food!</h2>
+                         <p>Food will be available from 11:30am until it's gone. We serve hotdogs and hamburgers with a
+                              variety of sides. Everyone is welcome to bring a dish to help out. More food equals more
+                              fun. Water, tea, and soda are also available. We have a BYOB (or any alcoholic drink)
+                              policy. Just be safe and responsible. </p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <h2>Charity Raffle</h2>
+                         <p>Although it's free to attend and you're not required to donate, we strongly recommend you
+                              do. Any profit is donated and distributed to a variety of charities. Four charities are
+                              chosen and voted on each year by the Fountain Green residents. We donate the money
+                              proportionally to the voting outcomes. </p>
+                         <p>You may purchase any number of raffle tickets. Check out the <a href="raffle.html">raffle
+                                   page</a> for more information. You can purchase raffle tickets there or click on the
+                              purchase button at the top of this page. </p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <h2>Activities</h2>
+                         <p>So besides gorging ourselves on food, what else happens at the block party? We have quite a
+                              few activities throughout the day. Check out our list of <a href="schedule.html">events.</a>
+                              We have activities for all different ages.</p>
+                         <p>Registration is required. This is so we have enough resources, supplies, and space to accommodate all the
+                              participants.</p>
+                    </div>
+               </div>
+
+          </section>
+
+          <footer class="container-fluid">
+               <ul class="social-links">
+                    <li class="social-links__item"><a href="">Facebook</a></li>
+                    <li class="social-links__item"><a href="">Instagram</a></li>
+                    <li class="social-links__item"><a href="">Twitter</a></li>
+               </ul>
+
+               <div class="copyright row justify-content-center m-3" style="text-align:center;">
+                    <div class="col">
+                         <p>&copy; 2021</p>
+                    </div>
+               </div>
+          </footer>
+     </div>
+
+
+
+     <script src="js/scripts.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+
+</body>
+
+</html>

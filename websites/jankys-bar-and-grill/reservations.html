@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - Janky's Bar and Grill</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Six+Caps&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="title-and-menu">
+            <h1>Janky's</h1>
+            <div class="menu">
+                <i onclick="toggleMenu()" id="menu" class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <nav>
+            <ul id="nav-list" class="nav-list">
+                <li class="nav-item"><a href="index.html">HOME</a></li>
+                <li class="nav-item"><a href="menu.html">MENU</a></li>
+                <li class="nav-item"><a href="hours-location.html"">HOURS/LOCATION</a></li>
+                <li class=" nav-item"><a href="#" class="active">RESERVATIONS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="hero hero-reservations">
+        <h1>Reservations</h1>
+    </section>
+
+    <section class="main-content">
+
+        <div class="page-title">
+            <h2>MAKE A RESERVATION</h2>
+            <p>You can also make a reservation by phone at (815) 455-3700.</p>
+            <p>Please call for reservations over 14 guests.</p>
+            <p>Reservations are required for a party of 6 or more.</p>
+        </div>
+
+        <form action="">
+            <div class="reservation-form">
+                <div class="party-size form-element">
+                    <label for="party-size">
+                        <h3>Party Size</h3>
+                    </label>
+                    <select id="party-size" name="party-size">
+                        <option value="2" selected>Party for 2</option>
+                        <option value="2">Party for 3</option>
+                        <option value="2">Party for 4</option>
+                        <option value="2">Party for 5</option>
+                        <option value="2">Party for 6</option>
+                        <option value="2">Party for 7</option>
+                        <option value="2">Party for 8</option>
+                        <option value="2">Party for 9</option>
+                        <option value="2">Party for 10</option>
+                        <option value="2">Party for 11</option>
+                        <option value="2">Party for 12</option>
+                        <option value="2">Party for 13</option>
+                        <option value="2">Party for 14</option>
+                    </select>
+                </div>
+
+                <div class="date form-element">
+                    <label for="date">
+                        <h3>Date</h3>
+                    </label>
+                    <input type="date" id="date" name="date" min="2000-13-13">
+                </div>
+
+                <div class="time form-element">
+                    <label for="time">
+                        <h3>Time</h3>
+                    </label>
+                    <input type="time" id="time" name="time">
+                </div>
+
+                <div class="submit">
+                    <input type="button" value="Find a Table">
+                </div>
+            </div>
+        </form>
+
+
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; Janky's Bar and Grill</p>
+    </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("nav-list");
+            if (x.className == "nav-list") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav-list";
+            }
+        }
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+        dd = '0' + dd
+        }
+        if (mm < 10) {
+        mm = '0' + mm
+        }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").setAttribute("min", today)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Registration - Fountain Green Block Party</title>
+
+     <!-- custom reset-->
+     <link rel="stylesheet" href="css/reset.css">
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+     <!-- custom css-->
+     <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+     <div class="flex-wrapper">
+          <header class="container-fluid p-0 pt-3 header">
+
+               <div class="mobile-logo">
+                    <a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+                </div>
+      
+
+               <i onclick="toggleMenu()" id="menu" class="fas fa-bars small-menu"></i>
+
+               <div class="time">
+                    <div class="time__element">
+                         <p class="time__text">
+                              DAYS
+                         </p>
+                         <p id="days" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              HOURS
+                         </p>
+                         <p id="hours" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              MIN
+                         </p>
+                         <p id="minutes" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+                    <div class="time__element">
+                         <p class="time__text">
+                              SEC
+                         </p>
+                         <p id="seconds" class="time__remaining">
+                              &nbsp;
+                         </p>
+                    </div>
+     
+     
+               </div>
+     
+               <div class="raffle">
+                    <a href="raffle.html" class="btn">Buy Raffle Ticket
+                    </a>
+               </div>
+
+
+               <nav class="navigation">
+                    <ul class="nav-list" id="nav-list">
+                         <li class="nav-list__item nav-list__item-empty mobile-only"><a href="index.html"><img style="width: 150px;" src="images/logo-circle.svg" alt="Picture of Logo"></a></li>
+                         <li class="nav-list__item"><a href="index.html">Home</a></li>
+                         <li class="nav-list__item"><a href="#">Registration</a></li>
+                         <li class="nav-list__item nav-list__item-empty desktop-only"><a href="index.html"><img src="images/logo-circle.svg" alt="Picture of Logo"></a>
+
+                         </li>
+                         <li class="nav-list__item"><a href="schedule.html">Schedule</a></li>
+                         <li class="nav-list__item"><a href="charity.html">Charity</a></li>
+                    </ul>
+               </nav>
+          </header>
+
+          <section class="main container">
+
+               <div class="row mt-5">
+                    <div class="col">
+                         <h1>Registration</h1>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <p>Thanks for visiting the registration page for the events/activities of our block party. The
+                              reason we ask that you register is to make sure we have enough resources, supplies, and
+                              space to run the activity. </p>
+                         <p>You can fill out the form below to register for one of the activities. Thanks for
+                              participating. </p>
+                         <p>Check out the <a href="schedule.html">schedule</a> for the time of each event.</p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col">
+                         <div class="alert alert-success charity-vote" id="charity-vote-success">
+                              <strong>Success!</strong> Your registration has been recorded. Thank you for
+                              participating.
+                         </div>
+
+                         <div class="alert alert-warning charity-vote" id="charity-vote-fail">
+                              <strong>Sorry!</strong> You did not complete the form.
+                         </div>
+                    </div>
+               </div>
+
+               <div class="row justify-content-center">
+                    <div class="col-6" style="max-width: 600px;">
+
+
+                         <form id="registration">
+
+                              <div class="form-group">
+                                   <label for="name">Name:</label>
+                                   <input type="text" class="form-control" placeholder="Enter your name" id="name">
+                              </div>
+
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="resident"
+                                             name="resident">Resident
+
+                                   </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                   <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="non-resident"
+                                             name="resident">Non-resident
+                                   </label>
+                              </div>
+
+                              <div class="form-group">
+                                   <label for="event">Event:</label>
+                                   <br>
+                                   <select class="form-control" id="registerForEvent">
+                                        <option></option>
+                                        <option value="bag toss">Bag Toss Tournament</option>
+                                        <option value="group grilling">Group Grilling</option>
+                                        <option value="water balloon toss">Water Balloon Toss</option>
+                                        <option value="vinyl t-shirt">Make your own Vinyl t-shirt</option>
+                                        <option value="scavenger hunt">Scavenger Hunt</option>
+                                        <option value="outdoor movie">Outdoor Movie</option>
+                                   </select>
+                              </div>
+
+                              <a> <button type="submit" class="btn btn-fountain mb-5">Submit</button></a>
+                         </form>
+
+
+
+
+                    </div>
+               </div>
+
+          </section>
+
+          <footer class="container-fluid">
+               <ul class="social-links">
+                    <li class="social-links__item"><a href="">Facebook</a></li>
+                    <li class="social-links__item"><a href="">Instagram</a></li>
+                    <li class="social-links__item"><a href="">Twitter</a></li>
+               </ul>
+
+               <div class="copyright row justify-content-center m-3" style="text-align:center;">
+                    <div class="col">
+                         <p>&copy; 2021</p>
+                    </div>
+               </div>
+          </footer>
+     </div>
+
+
+
+     <script src="js/scripts.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+     <script>
+          const form = document.querySelector("#registration");
+          form.addEventListener("submit", handleSubmit);
+
+          function handleSubmit(e) {
+               e.preventDefault();
+               registerEvent();
+          }
+     </script>
+
+
+</body>
+
+</html>

@@ -477,7 +477,7 @@ img {
      margin: 0px auto;
 
      p {
-          margin: 10px 0;
+          margin: 20px 0;
           font-size: 1em;
      }
 
@@ -599,6 +599,19 @@ img {
           &:active {
                background-color: lightgray;
           }
+     }
+}
+
+.list {
+     
+     h3 {
+          font-weight: bold;
+     }
+
+     margin: 10px;
+
+     &__item {
+          margin: 10px;
      }
 }
 
