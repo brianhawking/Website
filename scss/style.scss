@@ -111,6 +111,7 @@ section {
 
 body {
      line-height: 1.2;
+     font-size: 1.125rem;
 }
 
 ol,
@@ -147,6 +148,8 @@ body {
      font-family: var(--ff-text);
      width: 100vw;
      overflow-x: hidden;
+     line-height: 1.5;
+
 }
 
 // * > div {
@@ -239,6 +242,7 @@ img {
      margin: 140px auto 0px auto;
      width: min-content;
      position: relative;
+     // background-color: var(--clr-light);
 
      &__image {
           grid-area: image;
@@ -279,6 +283,7 @@ img {
 .buffer {
      height: calc(2em + 40px);
      width: 100%;
+     background-color: var(--clr-light);
 }
 
 .container {
@@ -296,6 +301,7 @@ img {
      }
 }
 
+/* MARK content */
 
 .content {
      width: 100%;
@@ -310,13 +316,55 @@ img {
           text-align: center;
           padding-top: 20px;
      }
+
+     &__subtitle {
+          font-weight: bold;
+          font-size: 1em;
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px;
+     }
 }
 
+.one-column {
+     width: 90%;
+     max-width: 1200px;
+     margin: 2em auto 0px auto;
 
-.two-columns {
+     p {
+          margin: 1em;
+     }
+
+     h3 {
+          margin: 0.75em;
+          font-weight: bold;
+          font-size: 1.25em;
+     }
+}
+
+.columns {
+     width: 90%;
      display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(calc(1400px / 3), 1fr));
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
      grid-gap: 10px;
+     margin: 0px auto;
+
+     img {
+          width: 100%;
+          border-radius: 10px;
+     }
+
+     .column {
+          h3 {
+               font-size: 1.2em;
+               font-weight: bold;
+               text-align: center;
+          }
+
+          p {
+               margin: 1em;
+          }
+     }
 }
 
 .three-columns {
@@ -385,7 +433,7 @@ img {
      // "tech image"
      // "buttons image";
      margin: 50px 10px;
-     box-shadow: 0 0 20px gray;
+     box-shadow: 0 0 20px black;
      background-color: white;
      color: black;
      padding: 10px;
@@ -614,7 +662,7 @@ img {
 }
 
 .list {
-     
+
      h3 {
           font-weight: bold;
      }
@@ -762,6 +810,7 @@ img {
                align-items: center;
                margin-right: 20px;
           }
+
      }
 
      .hero {
@@ -790,7 +839,12 @@ img {
 
      }
 
+     .content {
 
+          .one-column {
+               width: 100%;
+          }
+     }
 
 
 }
@@ -804,9 +858,11 @@ img {
      }
 
      .content {
+
           &__title {
                font-size: 1.25em;
           }
+
      }
 
      .callToAction {

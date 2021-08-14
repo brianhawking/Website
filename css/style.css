@@ -111,6 +111,7 @@ section {
 
 body {
   line-height: 1.2;
+  font-size: 1.125rem;
 }
 
 ol,
@@ -141,6 +142,7 @@ body {
   font-family: var(--ff-text);
   width: 100vw;
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
 /*====================================================
@@ -255,6 +257,7 @@ body {
 .buffer {
   height: calc(2em + 40px);
   width: 100%;
+  background-color: var(--clr-light);
 }
 
 .container {
@@ -272,6 +275,7 @@ body {
   color: white;
 }
 
+/* MARK content */
 .content {
   width: 100%;
   max-width: 1400px;
@@ -287,10 +291,51 @@ body {
   padding-top: 20px;
 }
 
-.two-columns {
+.content__subtitle {
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.one-column {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2em auto 0px auto;
+}
+
+.one-column p {
+  margin: 1em;
+}
+
+.one-column h3 {
+  margin: 0.75em;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.columns {
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(1400px / 3), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
+  margin: 0px auto;
+}
+
+.columns img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.columns .column h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.columns .column p {
+  margin: 1em;
 }
 
 .three-columns {
@@ -346,7 +391,7 @@ body {
   grid-template-rows: 5em 1fr auto;
   grid-template-areas: "name" "description" "tech" "buttons" "image";
   margin: 50px 10px;
-  box-shadow: 0 0 20px gray;
+  box-shadow: 0 0 20px black;
   background-color: white;
   color: black;
   padding: 10px;
@@ -685,6 +730,9 @@ body {
     left: 0px;
     width: 100%;
     text-align: left;
+  }
+  .content .one-column {
+    width: 100%;
   }
 }
 
